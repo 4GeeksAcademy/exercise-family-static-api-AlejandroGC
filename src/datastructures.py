@@ -54,9 +54,13 @@ class FamilyStructure:
     def delete_member(self, id):
         # fill this method and update the return
         ids = list(map(lambda member: member['id'], self._members))
-        index = ids.index(id)
-        self._members.pop(index)
-        return self._members
+        print(id in ids)
+        if id in ids:
+            index = ids.index(id)
+            self._members.pop(index)
+            return self._members
+        else:
+            return False
 
     def get_member(self, id):
         # fill this method and update the return
